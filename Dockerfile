@@ -9,6 +9,8 @@ COPY . /app
 
 WORKDIR /app
 
+RUN touch database/database.sqlite
+
 RUN curl -sS https://getcomposer.org/installer | php \
     && mv composer.phar /usr/local/bin/composer
 
