@@ -16,6 +16,10 @@ RUN curl -sS https://getcomposer.org/installer | php \
 
 RUN composer install --no-dev --optimize-autoloader
 
+RUN php artisan migrate --force
+
+RUN php artisan db:seed --force
+
 RUN npm install
 RUN npm run build
 
